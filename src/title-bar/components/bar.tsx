@@ -47,7 +47,7 @@ const Bar = ({
         fontFamily,
       }}
       onDoubleClick={dblClick}
-      onClick={drag}
+      onMouseDown={drag}
     >
       {children}
     </div>
