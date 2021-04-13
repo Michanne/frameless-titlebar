@@ -30,6 +30,7 @@ export interface WindowControlsProps extends ControlProps {
 
 export interface TitleBarProps extends ControlProps {
   onDoubleClick?: (e: React.MouseEvent) => void;
+  onDrag?: (e: React.MouseEvent) => void;
   platform?: Platform;
   children?: React.ReactNode;
   menu?: MenuItem[];
@@ -241,6 +242,7 @@ export interface TitleProps {
 
 export interface BarProps {
   onDoubleClick?: (e: React.MouseEvent) => void;
+  onDrag?: (e: React.MouseEvent) => void;
   children: React.ReactNode | React.ReactNodeArray;
   bottomBar?: boolean;
 }
