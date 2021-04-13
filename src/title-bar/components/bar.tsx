@@ -36,6 +36,7 @@ const Bar = ({
   const isDarwin = platform === 'darwin';
   return (
     <div
+      draggable="true"
       className={styles.Bar}
       ref={ref}
       style={{
@@ -47,7 +48,7 @@ const Bar = ({
         fontFamily,
       }}
       onDoubleClick={dblClick}
-      onDrag={drag}
+      onDragStart={drag}
     >
       {children}
     </div>
