@@ -5,6 +5,7 @@ import { BarProps } from '../typings';
 
 const Bar = ({
   onDoubleClick,
+  onDrag,
   children,
   bottomBar
 }: BarProps) => {
@@ -27,6 +28,11 @@ const Bar = ({
       onDoubleClick && onDoubleClick(e);
     }
   }, [ref.current, onDoubleClick])
+  const drag = useCallback((e) => {
+    if (e.target == ref.current) {
+      onDrag && onDrag(e);
+    }
+  }, [ref.current, onDoubleClick])
   const isDarwin = platform === 'darwin';
   return (
     <div
@@ -41,6 +47,7 @@ const Bar = ({
         fontFamily,
       }}
       onDoubleClick={dblClick}
+      onDrag={drag}
     >
       {children}
     </div>

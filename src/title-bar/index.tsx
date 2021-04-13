@@ -25,7 +25,8 @@ const TitleBar = ({
   iconSrc,
   title,
   maximized,
-  currentWindow
+  currentWindow,
+  onDrag
 }: TitleBarProps) => {
   const focused = useWindowFocus();
   const currentTheme = useTheme(theme, platform);
@@ -39,7 +40,7 @@ const TitleBar = ({
   return (
     <ThemeContext.Provider value={currentTheme}>
       <Fragment>
-        <Bar onDoubleClick={onDoubleClick}>
+        <Bar onDoubleClick={onDoubleClick} onDrag={onDrag}>
           <div className={cx(styles.ResizeHandle, styles.Top)} />
           <div className={cx(styles.ResizeHandle, styles.Left)} style={{ height: theme?.bar?.height }} />
           {!isDarwin && !controlsRight && (
